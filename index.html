@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brother Game Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'VT323', monospace;
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         .header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1') center/cover;
             image-rendering: pixelated;
             border-bottom: 4px solid #ff4d4d;
             height: 100vh;
@@ -73,10 +74,14 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            image-rendering: pixelated;
+            box-shadow: 5px 5px 0 #000;
+            transform: none;
         }
 
         .game-card:hover {
-            transform: translateY(-5px);
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0 #000;
         }
 
         .game-card::before {
@@ -109,6 +114,8 @@
             letter-spacing: 2px;
             font-size: 14px;
             box-shadow: 4px 4px 0 #000;
+            image-rendering: pixelated;
+            font-family: 'Press Start 2P', cursive;
         }
 
         .cta-button:hover {
@@ -134,7 +141,7 @@
         }
 
         .pixel-title {
-            font-size: 32px;
+            font-size: 24px;
             position: relative;
             margin-bottom: 40px;
             padding: 10px 20px;
@@ -148,6 +155,8 @@
                 10px 100%,
                 0 calc(100% - 10px)
             );
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 3px 3px 0 #000;
         }
 
         .pixel-box {
@@ -156,6 +165,8 @@
             padding: 20px;
             position: relative;
             margin-bottom: 30px;
+            image-rendering: pixelated;
+            box-shadow: 5px 5px 0 #000;
         }
 
         .pixel-box::before {
@@ -257,10 +268,18 @@
             );
             margin-top: 40px;
         }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+            image-rendering: pixelated;
+        }
     </style>
 </head>
 <body>
     <div class="header">
+        <img src="./assets/images/logo-studio.png" alt="Brother Game Studio" class="logo">
         <h1>Brother Game Studio</h1>
         <p>Sáng tạo trò chơi - Kiến tạo niềm vui</p>
         <a href="#games" class="cta-button">Khám phá games</a>
