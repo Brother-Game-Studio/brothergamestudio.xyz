@@ -15,8 +15,16 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+        :root {
+            --primary-color: #4B0082;      /* Indigo - màu chủ đạo */
+            --accent-color: #00FF9D;       /* Mint - màu nhấn */
+            --dark-bg: #1a1a2e;           /* Nền tối */
+            --light-text: #E0E0E0;        /* Chữ sáng */
+            --box-bg: #2a2a4a;            /* Nền box */
+        }
+
         .header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-1.2.1') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/images/bg.jpeg') center/100% 100%;
             image-rendering: pixelated;
             border-bottom: 4px solid #ff4d4d;
             height: 100vh;
@@ -39,7 +47,7 @@
         }
 
         .content {
-            background-color: #1a1a1a;
+            background-color: var(--dark-bg);
             background-image: 
                 linear-gradient(45deg, #2a2a2a 25%, transparent 25%),
                 linear-gradient(-45deg, #2a2a2a 25%, transparent 25%),
@@ -154,7 +162,7 @@
             position: relative;
             margin-bottom: 40px;
             padding: 10px 20px;
-            background: #ff4d4d;
+            background: var(--primary-color);
             display: inline-block;
             clip-path: polygon(
                 0 0,
@@ -167,16 +175,17 @@
             font-family: 'Press Start 2P', cursive;
             text-shadow: 3px 3px 0 #000;
             animation: glitch 0.3s ease-in-out;
+            border: 2px solid var(--accent-color);
         }
 
         .pixel-box {
-            background: #2a2a2a;
-            border: 4px solid #ff4d4d;
+            background: var(--box-bg);
+            border: 4px solid var(--accent-color);
             padding: 20px;
             position: relative;
             margin-bottom: 30px;
             image-rendering: pixelated;
-            box-shadow: 5px 5px 0 #000;
+            box-shadow: 8px 8px 0 rgba(0, 255, 157, 0.3);
         }
 
         .pixel-box::before {
@@ -186,12 +195,12 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            background: repeating-linear-gradient(
+            background: linear-gradient(
                 45deg,
-                #ff4d4d,
-                #ff4d4d 2px,
-                transparent 2px,
-                transparent 8px
+                var(--accent-color) 0%, 
+                transparent 20%,
+                transparent 80%,
+                var(--accent-color) 100%
             );
             z-index: -1;
         }
@@ -209,7 +218,7 @@
 
         .stat-number {
             font-size: 36px;
-            color: #ff4d4d;
+            color: var(--accent-color);
             display: block;
             margin-bottom: 10px;
             animation: pixelPulse 2s ease-in-out infinite;
@@ -330,42 +339,174 @@
             animation: pixelPulse 2s ease-in-out infinite;
         }
 
-        .founding-date {
-            background: #ff4d4d;
-            padding: 15px 30px;
-            display: inline-block;
-            margin: 20px 0;
-            position: relative;
-            font-family: 'Press Start 2P', cursive;
-            color: white;
-            text-shadow: 2px 2px 0 #000;
-            animation: pixelPulse 2s ease-in-out infinite;
-            border: 4px solid #ff3333;
-            box-shadow: 5px 5px 0 #000;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
         }
 
-        .founding-date::before {
-            content: '🎮 THÀNH LẬP';
+        .about-text {
+            padding: 30px;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+            background: #2a2a2a;
+            transition: transform 0.2s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: var(--accent-color);
+            font-family: 'Press Start 2P', cursive;
             display: block;
-            font-size: 14px;
             margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.2em;
             color: #fff;
         }
 
-        .founding-date::after {
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .mission-box {
+            text-align: center;
+            padding: 30px;
+            transition: transform 0.2s;
+        }
+
+        .mission-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .mission-box h3 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .mission-box p {
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+
+        .pixel-box {
+            background: var(--box-bg);
+            border: 4px solid var(--accent-color);
+            position: relative;
+            image-rendering: pixelated;
+            box-shadow: 8px 8px 0 rgba(0, 255, 157, 0.3);
+        }
+
+        .pixel-box::after {
             content: '';
             position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            border: 2px solid rgba(255, 77, 77, 0.3);
+            pointer-events: none;
+        }
+
+        .foundation-date {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .date-box {
+            display: inline-block;
+            background: var(--primary-color);
+            padding: 20px 40px;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            animation: pulseShadow 2s infinite;
+            position: relative;
+        }
+
+        .date-box::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
             bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: repeating-linear-gradient(
-                to right,
-                #ff3333 0,
-                #ff3333 8px,
-                transparent 8px,
-                transparent 16px
+            background: linear-gradient(45deg, 
+                var(--accent-color) 0%, 
+                transparent 20%,
+                transparent 80%,
+                var(--accent-color) 100%
             );
+            z-index: -1;
+            animation: rotateBorder 4s linear infinite;
+        }
+
+        .date-label {
+            display: block;
+            font-family: 'VT323', monospace;
+            color: var(--accent-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            display: block;
+            font-family: 'Press Start 2P', cursive;
+            color: var(--light-text);
+            font-size: 2em;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes pulseShadow {
+            0% { box-shadow: 0 0 20px var(--accent-color); }
+            50% { box-shadow: 0 0 40px var(--accent-color); }
+            100% { box-shadow: 0 0 20px var(--accent-color); }
+        }
+
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .pixel-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 12px 12px 0 rgba(0, 255, 157, 0.4);
+        }
+
+        .stat-box:hover .stat-number {
+            animation: glowText 1s infinite;
+        }
+
+        @keyframes glowText {
+            0% { text-shadow: 0 0 5px var(--accent-color); }
+            50% { text-shadow: 0 0 20px var(--accent-color); }
+            100% { text-shadow: 0 0 5px var(--accent-color); }
         }
     </style>
 </head>
@@ -380,23 +521,28 @@
     <div class="content">
         <section class="about-section">
             <h2 class="pixel-title">Về chúng tôi</h2>
-            <div class="pixel-box">
-                <p>Brother Game Studio là studio phát triển game độc lập. Chúng tôi tập trung vào việc tạo ra những trải nghiệm game độc đáo và hấp dẫn. Chúng tôi tin rằng mỗi tựa game là một câu chuyện đặc biệt cần được kể.</p>
-                
-                <div class="founding-date">
-                    27/12/2024
+            
+            <div class="foundation-date">
+                <div class="date-box">
+                    <span class="date-label">Ngày thành lập</span>
+                    <span class="date">27.12.2024</span>
                 </div>
+            </div>
 
-                <div class="stats-grid">
-                    <div class="stat-item">
+            <div class="about-grid">
+                <div class="about-text pixel-box">
+                    <p>Brother Game Studio là studio phát triển game độc lập. Chúng tôi tập trung vào việc tạo ra những trải nghiệm game độc đáo và hấp dẫn.</p>
+                </div>
+                <div class="stats-container">
+                    <div class="stat-box pixel-box">
                         <span class="stat-number">5+</span>
                         <span class="stat-label">Năm kinh nghiệm</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-box pixel-box">
                         <span class="stat-number">10+</span>
                         <span class="stat-label">Dự án game</span>
                     </div>
-                    <div class="stat-item">
+                    <div class="stat-box pixel-box">
                         <span class="stat-number">100K+</span>
                         <span class="stat-label">Người chơi</span>
                     </div>
@@ -407,16 +553,19 @@
         <section class="mission-section">
             <h2 class="pixel-title">Sứ mệnh</h2>
             <div class="mission-grid">
-                <div class="mission-item pixel-box">
-                    <h3>🎮 Sáng tạo không giới hạn</h3>
+                <div class="pixel-box mission-box">
+                    <div class="mission-icon">🎮</div>
+                    <h3>Sáng tạo không giới hạn</h3>
                     <p>Chúng tôi tin vào việc phá vỡ các giới hạn trong thiết kế game</p>
                 </div>
-                <div class="mission-item pixel-box">
-                    <h3>🌟 Chất lượng xuất sắc</h3>
+                <div class="pixel-box mission-box">
+                    <div class="mission-icon">🌟</div>
+                    <h3>Chất lượng xuất sắc</h3>
                     <p>Mỗi chi tiết được chau chuốt đến hoàn hảo</p>
                 </div>
-                <div class="mission-item pixel-box">
-                    <h3>💫 Trải nghiệm người dùng</h3>
+                <div class="pixel-box mission-box">
+                    <div class="mission-icon">💫</div>
+                    <h3>Trải nghiệm người dùng</h3>
                     <p>Đặt trải nghiệm người chơi lên hàng đầu</p>
                 </div>
             </div>
@@ -427,18 +576,18 @@
             <div class="team-grid">
                 <div class="team-member pixel-box">
                     <div class="member-avatar"></div>
-                    <h3>Nguyễn Văn A</h3>
-                    <p>Game Director</p>
+                    <h3>@hoangks5</h3>
+                    <p>Founder</p>
                 </div>
                 <div class="team-member pixel-box">
                     <div class="member-avatar"></div>
-                    <h3>Trần Thị B</h3>
-                    <p>Lead Artist</p>
+                    <h3>Nguyễn Đức Tâm</h3>
+                    <p>Game Designer<br>Game Artist<br>Game Writer<br>Sound Designer</p>
                 </div>
                 <div class="team-member pixel-box">
                     <div class="member-avatar"></div>
-                    <h3>Lê Văn C</h3>
-                    <p>Senior Developer</p>
+                    <h3>Nguyễn Quang Hưng</h3>
+                    <p>Game Designer<br>Game Artist<br>Tester</p>
                 </div>
             </div>
         </section>
