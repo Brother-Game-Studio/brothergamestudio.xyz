@@ -30,6 +30,7 @@
             margin-bottom: 20px;
             text-shadow: 4px 4px 0 #000;
             letter-spacing: 2px;
+            animation: glitch 0.3s ease-in-out;
         }
 
         .header p {
@@ -39,6 +40,13 @@
 
         .content {
             background-color: #1a1a1a;
+            background-image: 
+                linear-gradient(45deg, #2a2a2a 25%, transparent 25%),
+                linear-gradient(-45deg, #2a2a2a 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #2a2a2a 75%),
+                linear-gradient(-45deg, transparent 75%, #2a2a2a 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
             color: #fff;
             padding: 50px 10%;
         }
@@ -77,6 +85,7 @@
             image-rendering: pixelated;
             box-shadow: 5px 5px 0 #000;
             transform: none;
+            animation: pixelFadeIn 0.5s ease-out;
         }
 
         .game-card:hover {
@@ -157,6 +166,7 @@
             );
             font-family: 'Press Start 2P', cursive;
             text-shadow: 3px 3px 0 #000;
+            animation: glitch 0.3s ease-in-out;
         }
 
         .pixel-box {
@@ -202,6 +212,7 @@
             color: #ff4d4d;
             display: block;
             margin-bottom: 10px;
+            animation: pixelPulse 2s ease-in-out infinite;
         }
 
         .mission-grid {
@@ -270,10 +281,91 @@
         }
 
         .logo {
-            width: 200px;
+            width: 300px;
             height: auto;
             margin-bottom: 20px;
             image-rendering: pixelated;
+            animation: floatLogo 3s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes pixelFadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .pixel-title:hover {
+            animation: glitch 0.3s ease-in-out infinite;
+        }
+
+        @keyframes pixelRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pixelPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .member-avatar:hover {
+            animation: pixelRotate 2s linear infinite;
+        }
+
+        .stat-number {
+            animation: pixelPulse 2s ease-in-out infinite;
+        }
+
+        .founding-date {
+            background: #ff4d4d;
+            padding: 15px 30px;
+            display: inline-block;
+            margin: 20px 0;
+            position: relative;
+            font-family: 'Press Start 2P', cursive;
+            color: white;
+            text-shadow: 2px 2px 0 #000;
+            animation: pixelPulse 2s ease-in-out infinite;
+            border: 4px solid #ff3333;
+            box-shadow: 5px 5px 0 #000;
+        }
+
+        .founding-date::before {
+            content: '🎮 THÀNH LẬP';
+            display: block;
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .founding-date::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: repeating-linear-gradient(
+                to right,
+                #ff3333 0,
+                #ff3333 8px,
+                transparent 8px,
+                transparent 16px
+            );
         }
     </style>
 </head>
@@ -289,7 +381,12 @@
         <section class="about-section">
             <h2 class="pixel-title">Về chúng tôi</h2>
             <div class="pixel-box">
-                <p>Brother Game Studio là studio phát triển game độc lập, tập trung vào việc tạo ra những trải nghiệm game độc đáo và hấp dẫn. Chúng tôi tin rằng mỗi tựa game là một câu chuyện đặc biệt cần được kể.</p>
+                <p>Brother Game Studio là studio phát triển game độc lập. Chúng tôi tập trung vào việc tạo ra những trải nghiệm game độc đáo và hấp dẫn. Chúng tôi tin rằng mỗi tựa game là một câu chuyện đặc biệt cần được kể.</p>
+                
+                <div class="founding-date">
+                    27/12/2024
+                </div>
+
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="stat-number">5+</span>
