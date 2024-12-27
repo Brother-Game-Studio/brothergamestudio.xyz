@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brother Game Studio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&family=VT323&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -129,10 +131,10 @@
             border: 4px solid #ff3333;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 14px;
+            font-size: 16px;
             box-shadow: 4px 4px 0 #000;
             image-rendering: pixelated;
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'Silkscreen', cursive;
         }
 
         .cta-button:hover {
@@ -158,11 +160,11 @@
         }
 
         .pixel-title {
-            font-size: 24px;
+            font-size: 20px;
             position: relative;
             margin-bottom: 40px;
             padding: 10px 20px;
-            background: var(--primary-color);
+            background: #ff4d4d;
             display: inline-block;
             clip-path: polygon(
                 0 0,
@@ -172,20 +174,19 @@
                 10px 100%,
                 0 calc(100% - 10px)
             );
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'Silkscreen', cursive;
             text-shadow: 3px 3px 0 #000;
             animation: glitch 0.3s ease-in-out;
-            border: 2px solid var(--accent-color);
         }
 
         .pixel-box {
-            background: var(--box-bg);
-            border: 4px solid var(--accent-color);
+            background: #2a2a2a;
+            border: 4px solid #ff4d4d;
             padding: 20px;
             position: relative;
             margin-bottom: 30px;
             image-rendering: pixelated;
-            box-shadow: 8px 8px 0 rgba(0, 255, 157, 0.3);
+            box-shadow: 5px 5px 0 #000;
         }
 
         .pixel-box::before {
@@ -195,12 +196,12 @@
             left: -8px;
             right: -8px;
             bottom: -8px;
-            background: linear-gradient(
+            background: repeating-linear-gradient(
                 45deg,
-                var(--accent-color) 0%, 
-                transparent 20%,
-                transparent 80%,
-                var(--accent-color) 100%
+                #ff4d4d,
+                #ff4d4d 2px,
+                transparent 2px,
+                transparent 8px
             );
             z-index: -1;
         }
@@ -217,8 +218,8 @@
         }
 
         .stat-number {
-            font-size: 36px;
-            color: var(--accent-color);
+            font-size: 28px;
+            color: #ff4d4d;
             display: block;
             margin-bottom: 10px;
             animation: pixelPulse 2s ease-in-out infinite;
@@ -370,9 +371,9 @@
         }
 
         .stat-number {
-            font-size: 2.5em;
-            color: var(--accent-color);
-            font-family: 'Press Start 2P', cursive;
+            font-size: 28px;
+            color: #ff4d4d;
+            font-family: 'Silkscreen', cursive;
             display: block;
             margin-bottom: 10px;
         }
@@ -405,10 +406,10 @@
         }
 
         .mission-box h3 {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.2em;
+            font-family: 'Silkscreen', cursive;
+            font-size: 18px;
             margin-bottom: 15px;
-            color: var(--accent-color);
+            color: #ff4d4d;
         }
 
         .mission-box p {
@@ -417,11 +418,11 @@
         }
 
         .pixel-box {
-            background: var(--box-bg);
-            border: 4px solid var(--accent-color);
+            background: #2a2a2a;
+            border: 4px solid #ff4d4d;
             position: relative;
             image-rendering: pixelated;
-            box-shadow: 8px 8px 0 rgba(0, 255, 157, 0.3);
+            box-shadow: 8px 8px 0 #000;
         }
 
         .pixel-box::after {
@@ -442,10 +443,10 @@
 
         .date-box {
             display: inline-block;
-            background: var(--primary-color);
+            background: #4B0082;
             padding: 20px 40px;
-            border: 4px solid var(--accent-color);
-            box-shadow: 0 0 20px var(--accent-color);
+            border: 4px solid #00FF9D;
+            box-shadow: 0 0 20px #00FF9D;
             animation: pulseShadow 2s infinite;
             position: relative;
         }
@@ -458,10 +459,10 @@
             right: -8px;
             bottom: -8px;
             background: linear-gradient(45deg, 
-                var(--accent-color) 0%, 
+                #00FF9D 0%, 
                 transparent 20%,
                 transparent 80%,
-                var(--accent-color) 100%
+                #00FF9D 100%
             );
             z-index: -1;
             animation: rotateBorder 4s linear infinite;
@@ -469,44 +470,37 @@
 
         .date-label {
             display: block;
-            font-family: 'VT323', monospace;
-            color: var(--accent-color);
-            font-size: 1.2em;
+            font-family: 'Silkscreen', cursive;
+            font-size: 20px;
+            color: #fff;
             margin-bottom: 10px;
         }
 
         .date {
-            display: block;
-            font-family: 'Press Start 2P', cursive;
-            color: var(--light-text);
             font-size: 2em;
-            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            color: #00FF9D;
         }
 
         @keyframes pulseShadow {
-            0% { box-shadow: 0 0 20px var(--accent-color); }
-            50% { box-shadow: 0 0 40px var(--accent-color); }
-            100% { box-shadow: 0 0 20px var(--accent-color); }
+            0% {
+                box-shadow: 0 0 0 0px rgba(0, 255, 157, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 255, 157, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0px rgba(0, 255, 157, 0);
+            }
         }
 
         @keyframes rotateBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .pixel-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 12px 12px 0 rgba(0, 255, 157, 0.4);
-        }
-
-        .stat-box:hover .stat-number {
-            animation: glowText 1s infinite;
-        }
-
-        @keyframes glowText {
-            0% { text-shadow: 0 0 5px var(--accent-color); }
-            50% { text-shadow: 0 0 20px var(--accent-color); }
-            100% { text-shadow: 0 0 5px var(--accent-color); }
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
