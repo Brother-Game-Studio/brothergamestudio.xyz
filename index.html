@@ -264,11 +264,25 @@
             gap: 30px;
         }
 
+        .team-member {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
         .member-avatar {
-            width: 100px;
-            height: 100px;
-            background: #ff4d4d;
-            margin: 0 auto 15px;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            display: block;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 255, 157, 0.3);
             clip-path: polygon(
                 20% 0%,
                 80% 0%,
@@ -279,6 +293,38 @@
                 0% 80%,
                 0% 20%
             );
+            object-fit: cover;
+            position: relative;
+        }
+
+        .member-avatar::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, 
+                var(--accent-color) 0%, 
+                transparent 50%,
+                var(--accent-color) 100%
+            );
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+        }
+
+        .team-member h3 {
+            color: var(--accent-color);
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Silkscreen', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .team-member p {
+            color: var(--light-text);
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .social-btn {
@@ -535,6 +581,42 @@
             font-size: 1.3em;
             margin-bottom: 15px;
         }
+
+        @keyframes borderGlow {
+            0% {
+                opacity: 0.5;
+                transform: rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+                transform: rotate(360deg);
+            }
+        }
+
+        .team-member:hover .member-avatar {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.5);
+        }
+
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: linear-gradient(45deg, 
+                var(--accent-color), 
+                transparent 40%,
+                transparent 60%,
+                var(--accent-color)
+            );
+            z-index: -1;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -602,17 +684,17 @@
             <h2 class="pixel-title">Our Team</h2>
             <div class="team-grid">
                 <div class="team-member pixel-box">
-                    <div class="member-avatar"></div>
+                    <img src="./assets/images/nft-avatar-1.png" alt="hoangks5 NFT Avatar" class="member-avatar">
                     <h3>@hoangks5</h3>
                     <p>Founder & Lead Developer</p>
                 </div>
                 <div class="team-member pixel-box">
-                    <div class="member-avatar"></div>
+                    <img src="./assets/images/nft-avatar-2.png" alt="Nguyen Duc Tam NFT Avatar" class="member-avatar">
                     <h3>Nguyen Duc Tam</h3>
                     <p>Creative Director<br>Lead Artist<br>Narrative Designer<br>Audio Director</p>
                 </div>
                 <div class="team-member pixel-box">
-                    <div class="member-avatar"></div>
+                    <img src="./assets/images/nft-avatar-3.png" alt="Nguyen Quang Hung NFT Avatar" class="member-avatar">
                     <h3>Nguyen Quang Hung</h3>
                     <p>Game Designer<br>Technical Artist<br>QA Lead</p>
                 </div>
