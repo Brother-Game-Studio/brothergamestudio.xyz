@@ -1,0 +1,17 @@
+# Brother Game Studio robots.txt
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /images/
+
+# Không cho phép crawl các thư mục admin hoặc private
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /draft/
+
+# Sitemap
+Sitemap: https://brothergamestudio.xyz/sitemap.xml
+
+# Tốc độ crawl
+Crawl-delay: 10 
