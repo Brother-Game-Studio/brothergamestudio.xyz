@@ -635,6 +635,69 @@
                 box-shadow: 4px 4px 0 #000;
             }
         }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+            color: white;
+            text-decoration: none;
+            border: 3px solid #ff4d4d;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 77, 77, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .social-btn:hover::before {
+            left: 100%;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.3);
+            border-color: #ff6b6b;
+        }
+
+        .social-icon {
+            width: 24px;
+            height: 24px;
+            image-rendering: pixelated;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-3px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -642,7 +705,7 @@
         <img src="./assets/images/logo-studio.png" alt="Brother Game Studio" class="logo">
         <h1>Brother Game Studio</h1>
         <p>Crafting Experiences, Creating Joy</p>
-        <a href="#games" class="cta-button">Explore Our Games</a>
+        <a href="#featured-game" class="cta-button">Explore Our Games</a>
     </div>
 
     <div class="content">
@@ -658,19 +721,21 @@
 
             <div class="about-grid">
                 <div class="about-text pixel-box">
-                    <p>Brother Game Studio is an innovative indie game development studio committed to pushing creative boundaries. We specialize in crafting unique gaming experiences that blend artistic excellence with engaging gameplay mechanics.</p>
+                    <p><strong><font color="#ff4d4d">Brother Game Studio</font></strong> is a forward-thinking indie game development studio dedicated to pushing the boundaries of creativity and innovation. As an independent team, we pride ourselves on crafting unique gaming experiences that stand out in the industry. Our focus is on blending artistic excellence with engaging gameplay mechanics to create games that are not only visually stunning but also deeply immersive and enjoyable.</p>
+                    <p>We are committed to exploring new ideas and experimenting with unconventional approaches, ensuring that each of our projects offers something fresh and memorable. By combining a passion for art, storytelling, and innovative design, we strive to deliver games that captivate players and leave a lasting impression.</p>
+                    <p>At Brother Game Studio, we believe that games are more than just entertainment—they are an art form. That’s why we pour our hearts into every detail, from the visuals and sound to the gameplay mechanics, to create experiences that are both beautiful and fun. Our mission is to redefine what indie games can be and to inspire players with worlds that are as unique as they are engaging.</p>
                 </div>
                 <div class="stats-container">
                     <div class="stat-box pixel-box">
-                        <span class="stat-number">5+</span>
+                        <span class="stat-number">1+</span>
                         <span class="stat-label">Years of Innovation</span>
                     </div>
                     <div class="stat-box pixel-box">
-                        <span class="stat-number">10+</span>
+                        <span class="stat-number">1</span>
                         <span class="stat-label">Game Projects</span>
                     </div>
                     <div class="stat-box pixel-box">
-                        <span class="stat-number">100K+</span>
+                        <span class="stat-number">100+</span>
                         <span class="stat-label">Global Players</span>
                     </div>
                 </div>
@@ -719,7 +784,7 @@
             </div>
         </section>
 
-        <section class="featured-game-section">
+        <section class="featured-game-section" id="featured-game">
             <h2 class="pixel-title">Featured Game</h2>
             <div class="featured-game pixel-box" style="
                 background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://app.mememayhem.fun/assets/images/bg/bg-mainmenu.webp');
@@ -744,7 +809,7 @@
                     font-size: 1.5em;
                     margin-bottom: 30px;
                     color: #fff;
-                ">Khám phá thế giới meme đầy màu sắc và hành động trong trò chơi mới nhất của chúng tôi!</p>
+                ">Explore a vibrant and action-packed world of memes in our latest game!</p>
                 <div style="margin: 30px 0;">
                     <span style="
                         background: #ff4d4d;
@@ -752,7 +817,7 @@
                         border-radius: 5px;
                         margin-right: 15px;
                         font-family: 'Silkscreen', cursive;
-                    ">🚀 Ra mắt: 29.12.2024</span>
+                    ">🚀 Alpha Testing: 29.12.2024</span>
                 </div>
                 <a href="https://mememayhem.fun" class="cta-button" style="
                     font-size: 1.5em;
@@ -769,12 +834,21 @@
                 <div class="contact-info">
                     <p>📧 Email: contact@brothergamestudio.xyz</p>
                     <p>📱 Phone: +84 358-259-167</p>
-                    <p>🏢 Address: 195 Quan Hoa Street, Cau Giay District, Hanoi, Vietnam</p>
+                    <p>🏢 Address: Cau Giay, Hanoi, Vietnam</p>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/Brother-Game-Studio" class="social-btn">Github</a>
-                    <a href="https://x.com/brothergame_std" class="social-btn">X</a>
-                    <a href="https://www.facebook.com/profile.php?id=61571118547572" class="social-btn">Facebook</a>
+                    <a href="https://github.com/Brother-Game-Studio" class="social-btn">
+                        <img src="./assets/images/github-pixel.png" alt="Github" class="social-icon">
+                        Github
+                    </a>
+                    <a href="https://x.com/brothergame_std" class="social-btn">
+                        <img src="./assets/images/x-pixel.webp" alt="X" class="social-icon">
+                        X
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61571118547572" class="social-btn">
+                        <img src="./assets/images/facebook-pixel.png" alt="Facebook" class="social-icon">
+                        Facebook
+                    </a>
                 </div>
             </div>
         </section>
