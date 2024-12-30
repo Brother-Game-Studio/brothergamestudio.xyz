@@ -620,6 +620,21 @@
             z-index: -1;
             opacity: 0.5;
         }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 4px 4px 0 #000;
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 6px 6px 0 #000;
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 4px 4px 0 #000;
+            }
+        }
     </style>
 </head>
 <body>
@@ -704,21 +719,47 @@
             </div>
         </section>
 
-        <section class="games-section">
-            <h2 class="pixel-title">Our Portfolio</h2>
-            <div class="games-grid">
-                <div class="game-card pixel-corners">
-                    <h3>Adventure Quest</h3>
-                    <p>An immersive action-adventure featuring stunning pixel art and dynamic combat systems</p>
+        <section class="featured-game-section">
+            <h2 class="pixel-title">Featured Game</h2>
+            <div class="featured-game pixel-box" style="
+                background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://app.mememayhem.fun/assets/images/bg/bg-mainmenu.webp');
+                background-size: cover;
+                background-position: center;
+                padding: 40px;
+                text-align: center;
+                margin-bottom: 60px;
+            ">
+                <img src="https://app.mememayhem.fun/assets/images/logo-game.png" alt="Meme Mayhem Logo" style="
+                    width: 300px;
+                    margin: 20px auto;
+                    filter: drop-shadow(0 0 10px rgba(255,77,77,0.5));
+                ">
+                <h3 style="
+                    font-size: 2.5em;
+                    color: #ff4d4d;
+                    margin: 20px 0;
+                    text-shadow: 3px 3px 0 #000;
+                ">Meme Mayhem: Clash of the Internet Legend</h3>
+                <p style="
+                    font-size: 1.5em;
+                    margin-bottom: 30px;
+                    color: #fff;
+                ">Khám phá thế giới meme đầy màu sắc và hành động trong trò chơi mới nhất của chúng tôi!</p>
+                <div style="margin: 30px 0;">
+                    <span style="
+                        background: #ff4d4d;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        margin-right: 15px;
+                        font-family: 'Silkscreen', cursive;
+                    ">🚀 Ra mắt: 29.12.2024</span>
                 </div>
-                <div class="game-card pixel-corners">
-                    <h3>Space Warriors</h3>
-                    <p>A multiplayer space combat game with innovative mechanics and strategic gameplay</p>
-                </div>
-                <div class="game-card pixel-corners">
-                    <h3>Puzzle Master</h3>
-                    <p>An intellectually challenging puzzle game with unique problem-solving mechanics</p>
-                </div>
+                <a href="https://mememayhem.fun" class="cta-button" style="
+                    font-size: 1.5em;
+                    padding: 20px 40px;
+                    margin-top: 20px;
+                    animation: pulse 2s infinite;
+                ">Play Now</a>
             </div>
         </section>
 
